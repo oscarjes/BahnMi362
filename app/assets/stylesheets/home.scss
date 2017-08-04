@@ -18,6 +18,13 @@ div.contact{
   margin-right: auto;
 }
 
+div.menu{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
 div.container{
   border-radius: 5px;
   text-align: center;
@@ -28,13 +35,19 @@ div.welcome-nav{
 }
 
 div.contact-header{
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
-div.header{
+div.menu-header{
   background: black;
 }
 
 img.logo{
   width: 200px;
+}
+
+div.address{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

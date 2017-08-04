@@ -1,0 +1,54 @@
+<div class="menu-header">
+  <div class="ui inverted segment">
+    <div class="ui inverted secondary pointing menu">
+      <a href="/" class="item">
+        Home
+      </a>
+      <a class="active item">
+        Menu
+      </a>
+      <a href="contact" class="item">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="menu">
+  <div class="ui raised padded text container segment">
+    <div class="ui top attached tabular menu">
+      <% @sections.each do |section| %>
+        <%= link_to section.name, menu_path(section: section.id), 
+            class: "item #{'active' if params[:section] == section.id.to_s}" %>
+      <% end %>
+    </div>
+    <div class="ui bottom attached segment">
+    <div class="fooditems">
+    <div class="ui divided items">
+    <% if @food_items.present? %>
+      <% @food_items.each do |item|%>
+          <div class="item">
+            <div class="ui small image">
+              <%= image_tag "banhmi-250.jpg", class: "itempic" %>
+            </div>
+            <div class="content">
+              <div class="header"><%= item.name %></div>
+              <div class="meta">
+                <span class="price"><%= number_to_currency(item.price, unit: "VND ") %></span>
+              </div>
+              <div class="description">
+                <%= item.description %>
+              </div>
+              <div class="extra">
+                <div class="ui right floated secondary button">
+                  Add to Cart
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
