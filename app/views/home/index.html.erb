@@ -1,20 +1,43 @@
+<div class="header">
+  <div class="ui inverted segment">
+    <div class="ui inverted secondary pointing menu">
+      <a class="active item">
+        Home
+      </a>
+      <a class="item">
+        Menu
+      </a>
+      <a href="contact" class="item">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</div>
+
 <div class="welcome">
-  <div class="welcome-header">
-      <h1>BahnMi362</h1>
-      <h4>Best BahnMi in town</h4>
-  </div>
-  <div class="welcome-nav">
-    <div class="ui black animated button" tabindex="0">
-      <div class="visible content">Menu</div>
-      <div class="hidden content">
-        <i class="right arrow icon"></i>
-      </div>
+  <div class="ui raised very padded text container segment">
+
+    <%= image_tag "logo.png", class: "logo" %>
+    <div class="welcome-header">
+        <h4>Best BahnMi in town</h4>
     </div>
-    <div class="ui black animated button" tabindex="0">
-      <div class="visible content">About Us</div>
-      <div class="hidden content">
-        <i class="right arrow icon"></i>
-      </div>
+    <div class="welcome-nav">
+      <button class="ui black animated button" tabindex="0">
+        <div class="visible content">Menu</div>
+        <div class="hidden content">
+          <i class="right arrow icon"></i>
+        </div>
+      </button>
+      <a href="contact">
+        <button class="ui black animated button" tabindex="0">
+            <div class="visible content">Contact Us</div>
+            <div class="hidden content">
+              <i class="right arrow icon"></i>
+            </div>
+        </button>
+      </a>
     </div>
   </div>
+</div>
+
 </div>
