@@ -10,6 +10,12 @@
       <a href="contact" class="item">
         Contact Us
       </a>
+      <div class ="right menu">
+        <a href="cart" style="margin-top: 10px; margin-right: 10px; color: white">
+          Items in your cart: <%= get_cart.item_count %>
+          <i class="shopping basket icon" style="float: right; margin-left: 10px;"></i>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -40,9 +46,11 @@
                 <%= item.description %>
               </div>
               <div class="extra">
-                <div class="ui right floated secondary button">
-                  Add to Cart
-                </div>
+                <%= form_for LineItem.new(food_item: item), url: carts_add_path do |f| %>
+                  <%= f.hidden_field :food_item_id %>
+                  <%= f.number_field :quantity %>
+                  <%= f.submit "Add to Cart", class: "ui right floated secondary button" %>
+                <% end %>
               </div>
             </div>
           </div>

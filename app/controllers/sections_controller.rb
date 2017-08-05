@@ -9,8 +9,4 @@ class SectionsController < ApplicationController
     section = Section.find(params[:section])
     @food_items = section.food_items
   end
-
-  def show
-    
-  end
 end
