@@ -6,7 +6,7 @@ Submitted by: Oscar
 
 Time spent: 16 hours spent in total
 
-URL: **heroku-app-url**
+URL: https://banhmi362.herokuapp.com/
 
 ## User Stories
 
