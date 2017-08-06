@@ -30,6 +30,7 @@
       <thead>
         <tr><th>Item</th>
         <th>Quantity</th>
+        <th>Total Price</th>
         <th>Action</th>
       </tr></thead>
       <tbody>
@@ -37,10 +38,23 @@
           <tr>
             <td><%= line_item.name %></td>
             <td><%= line_item.quantity %></td>
+            <td><%= priceVND(line_item.totalprice) %></td>
             <td><%= link_to "Delete", line_item_path(line_item), method: :delete %></td>
           </tr>
         <% end %>
+        <tr>
+            <td>Delivery Fee</td>
+            <td></td>
+            <td><%= priceVND(20000) %></td>
+            <td></td>
+          </tr>
       </tbody>
+        <tfoot>
+          <tr><th><strong>Total:</strong></th>
+          <th></th>
+          <th><strong><%= priceVND(@cart.total) %></strong></th>
+          <th></th>
+        </tr></tfoot>
     </table>
 
     <%= link_to "Confirm Order", orders_path, method: :get, class: "ui secondary button" %>

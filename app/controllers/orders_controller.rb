@@ -18,5 +18,6 @@ class OrdersController < ApplicationController
 
   def thanks
     @order = Order.find(params[:id])
+    destroy_cart
   end
 end

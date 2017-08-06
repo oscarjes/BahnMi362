@@ -2,6 +2,7 @@
 
 Thank you <%= @order.name %>!
 Your order id is #<%= @order.id %>.<br><br>
+Your total price is: <%= priceVND(@order.total) %><br><br>
 Your order was submitted on <%= date_string_for(@order.created_at) %> 
 and will be delivered to <%= @order.address %>.<br><br>
 

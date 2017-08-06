@@ -4,4 +4,10 @@ class Cart < ApplicationRecord
   def item_count
     line_items.count
   end
+
+  def total
+    ordertotal = line_items.sum { |p| p.food_item.price * p.quantity }
+    total = ordertotal + 20000
+    total
+  end
 end
