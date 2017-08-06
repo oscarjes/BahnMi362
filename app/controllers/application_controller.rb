@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   helper_method :get_cart
 
   def get_cart
+    return @cart if @cart
+    Rails.logger.info "Loading cart from DB"
     if session[:cart_id]
       @cart = Cart.find session[:cart_id]
     else

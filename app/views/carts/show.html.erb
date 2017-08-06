@@ -26,5 +26,22 @@
         <h1>Your Order:</h1>
     </div>
     
+    <table class="ui three column table">
+      <thead>
+        <tr><th>Item</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr></thead>
+      <tbody>
+        <% @cart.line_items.each do |line_item| %>
+          <tr>
+            <td><%= line_item.name %></td>
+            <td><%= line_item.quantity %></td>
+            <td>Delete</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
   </div>
 </div>
