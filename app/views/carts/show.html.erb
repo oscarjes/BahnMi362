@@ -22,6 +22,29 @@
 
 <div class="contact">
   <div class="ui raised very padded text container segment" style="padding: 20px;">
+
+    <div class="ui three steps">
+      <div class="active step">
+        <i class="food icon black"></i>
+        <div class="content">
+          <div class="title">Review Your Order</div>
+        </div>
+      </div>
+      <div class="disabled step">
+        <i class="truck icon"></i>
+        <div class="content">
+          <div class="title">Enter Delivery Info</div>
+        </div>
+      </div>
+      <div class="disabled step">
+        <i class="payment icon"></i>
+        <div class="content">
+          <div class="title">Your Food is on the Way!</div>
+        </div>
+      </div>
+    </div>
+
+
     <div class="cart-header">
         <h1>Please review your order:</h1>
     </div>
@@ -57,7 +80,7 @@
         </tr></tfoot>
     </table>
 
-    <%= link_to "Confirm Order", orders_path, method: :get, class: "ui secondary button" %>
+    <%= link_to "Proceed to Checkout", orders_path, method: :get, class: "ui secondary button" %>
 
   </div>
 </div>

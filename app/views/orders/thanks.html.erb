@@ -1,16 +1,79 @@
-<h1>Thank you page</h1>
+<div class="menu-header">
+  <div class="ui inverted segment">
+    <div class="ui inverted secondary pointing menu">
+      <a href="/"  class="item">
+        Home
+      </a>
+      <a href="/menu" class="item">
+        Menu
+      </a>
+      <a href="/contact" class="item">
+        Contact Us
+      </a>
+      <div class ="right menu">
+        <a href="cart" style="margin-top: 10px; margin-right: 10px; color: white">
+          Items in your cart: <%= get_cart.item_count %>
+          <i class="shopping basket icon" style="float: right; margin-left: 10px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
-Thank you <%= @order.name %>!
-Your order id is #<%= @order.id %>.<br><br>
-Your total price is: <%= priceVND(@order.total) %><br><br>
-Your order was submitted on <%= date_string_for(@order.created_at) %> 
-and will be delivered to <%= @order.address %>.<br><br>
+    <div class="contact">
+      <div class="ui raised very padded text container segment" style="padding: 20px;">
 
-You ordered:
-<ul>
-  <% @order.line_items.each do |item| %>
-    <li> 
-      <%= item.quantity %>x <%= item.name %>
-    </li>
-  <% end %>
-</ul>
+
+        <div class="ui three steps">
+          <div class="disabled step">
+            <i class="checkmark icon"></i>
+            <div class="content">
+              <div class="title">Review Your Order</div>
+            </div>
+          </div>
+          <div class="disabled step">
+            <i class="checkmark icon"></i>
+            <div class="content">
+              <div class="title">Enter Delivery Info</div>
+            </div>
+          </div>
+          <div class="completed step">
+            <i class="payment icon"></i>
+            <div class="content">
+              <div class="title">Your Food is on the Way!</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="cart-header" style="margin-bottom: 20px;">
+            <h1>Thank you <%= @order.name %>!</h1>
+        </div>
+
+        <div class="ui centered card">
+          <div class="content">
+            <div class="header">Your Order</div>
+            <div class="description">
+                <div>Order ID: #<%= @order.id %></div>
+                <div>Order submitted: <%= date_string_for(@order.created_at) %> </div>
+                <div>Total: <%= priceVND(@order.total) %></div>
+                <div>Delivery address: <%= @order.address %></div><br>
+                <div class="order">
+                  You ordered:
+                  <ul>
+                    <% @order.line_items.each do |item| %>
+                      <li> 
+                        <%= item.quantity %>x <%= item.name %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+    
+
+  </div>
+</div>

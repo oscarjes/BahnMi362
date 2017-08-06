@@ -22,15 +22,46 @@
 
 <div class="contact">
   <div class="ui raised very padded text container segment" style="padding: 20px;">
-    <div class="cart-header">
+
+    <div class="ui three steps">
+      <div class="disabled step">
+        <i class="checkmark icon"></i>
+        <div class="content">
+          <div class="title">Review Your Order</div>
+        </div>
+      </div>
+      <div class="active step">
+        <i class="truck icon black"></i>
+        <div class="content">
+          <div class="title">Enter Delivery Info</div>
+        </div>
+      </div>
+      <div class="disabled step">
+        <i class="payment icon"></i>
+        <div class="content">
+          <div class="title">Your Food is on the Way!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-header" style="margin-bottom: 20px;">
         <h1>Your details:</h1>
     </div>
 
-    <%= form_for Order.new do |f| %>
-      <%= f.text_field :name, placeholder: "Name..." %>
-      <%= f.text_field :phone, placeholder: "Phone..." %>
-      <%= f.text_area :address, placeholder: "Address..." %>
-      <%= f.submit "Confirm Your Order"  %>
+    <%= form_for Order.new, html: {class: "ui form"} do |f| %>
+      <div class="field">
+        <label style="float: left;">Your Name:</label>
+        <%= f.text_field :name, placeholder: "Your Name..." %>
+      </div>
+      <div class="field">
+        <label style="float: left;">Your Phone Number:</label>
+        <%= f.text_field :phone, placeholder: "Your Phone Number..." %>
+      </div>
+      <div class="field">
+        <label style="float: left;">The Delivery Address:</label>
+        <%= f.text_area :address, placeholder: "The Delivery Address..." %>
+      </div>
+      <%= f.submit "Place Your Order", class: "negative ui button" %>
     <% end %>
 
   </div>

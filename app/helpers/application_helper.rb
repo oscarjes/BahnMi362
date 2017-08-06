@@ -6,4 +6,11 @@ module ApplicationHelper
   def priceVND(price)
     number_to_currency(price, unit: "VND ")
   end
+
+  def flasherize(key)
+    case key.to_sym
+      when :success then "success"
+      when :error then "error"
+      end
+  end
 end

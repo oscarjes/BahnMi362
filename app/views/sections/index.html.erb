@@ -11,7 +11,7 @@
         Contact Us
       </a>
       <div class ="right menu">
-        <a href="cart" style="margin-top: 10px; margin-right: 10px; color: white">
+        <a href="cart" class="<%= get_cart.item_count %>" style="margin-top: 10px; margin-right: 10px; color: white">
           Items in your cart: <%= get_cart.item_count %>
           <i class="shopping basket icon" style="float: right; margin-left: 10px;"></i>
         </a>
@@ -19,9 +19,21 @@
     </div>
   </div>
 </div>
-
+<a href="cart" class="checkout-label hidden">
+  <div class="ui pointing large label red" style="float: right; margin-right: 10px;">
+              Click here to Checkout
+  </div>
+</a>
 <div class="menu">
   <div class="ui raised padded text container segment">
+    <% flash.each do |key, value| %>
+      <div class="ui <%= flasherize(key) %> message">
+        <div class="header">
+          Oh No!
+        </div>
+        <p><%= value %></p>
+      </div>
+    <% end %>
     <div class="ui top attached tabular menu">
       <% @sections.each do |section| %>
         <%= link_to section.name, menu_path(section: section.id), 
@@ -48,8 +60,13 @@
               <div class="extra">
                 <%= form_for LineItem.new(food_item: item), url: carts_add_path do |f| %>
                   <%= f.hidden_field :food_item_id %>
-                  <%= f.number_field :quantity %>
-                  <%= f.submit "Add to Cart", class: "ui right floated secondary button" %>
+                    <div class="ui action input right floated">
+                      <%= f.number_field :quantity, min: "1", value: "1", style: "width: 60px;", class: "rigth floated" %>
+                      <button class="ui black labeled icon button">
+                        <i class="cart icon"></i>
+                        Add to Cart
+                      </button>
+                    </div>
                 <% end %>
               </div>
             </div>
