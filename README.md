@@ -4,7 +4,7 @@ BahnMi362 is a Ruby on Rails restaurant website let users order foods.
 
 Submitted by: Oscar
 
-Time spent: **XX** hours spent in total
+Time spent: 16 hours spent in total
 
 URL: **heroku-app-url**
 
@@ -48,27 +48,27 @@ URL: **heroku-app-url**
 
 The following **additional** features are implemented:
 
-* [ ] Something nice you added.
+* [x] User sees an order summary after he places his order
+* [x] User sees a notification urging him to check out once there are items in the cart
+* [x] User sees a progress bar as he goes through the checkout process
 
 The following **known issues**:
 
-* List bugs or things that don't work yet
+* Code needs to be cleaned up, e.g. move the nav menu to the layout file
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+![Video Walkthrough](BanhMi362.gif)
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Not enough time to clean up code.
 
 ## License
 
-    Copyright [yyyy] [name]
+    Copyright 2017 Oscar Jesionek
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
