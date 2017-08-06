@@ -1,0 +1,15 @@
+<h1>Thank you page</h1>
+
+Thank you <%= @order.name %>!
+Your order id is #<%= @order.id %>.<br><br>
+Your order was submitted on <%= date_string_for(@order.created_at) %> 
+and will be delivered to <%= @order.address %>.<br><br>
+
+You ordered:
+<ul>
+  <% @order.line_items.each do |item| %>
+    <li> 
+      <%= item.quantity %>x <%= item.name %>
+    </li>
+  <% end %>
+</ul>
