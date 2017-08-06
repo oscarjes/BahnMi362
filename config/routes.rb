@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :food_items
   end
   resources :line_items
+  resources :orders
 
   root "home#index"
   get "contact" => "home#contact"

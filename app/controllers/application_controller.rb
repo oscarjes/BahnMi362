@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = @cart.id
     @cart
   end
+
+  def destroy_cart
+    session[:cart_id] = nil
+  end
 end

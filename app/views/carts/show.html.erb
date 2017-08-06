@@ -23,9 +23,9 @@
 <div class="contact">
   <div class="ui raised very padded text container segment" style="padding: 20px;">
     <div class="cart-header">
-        <h1>Your Order:</h1>
+        <h1>Please review your order:</h1>
     </div>
-    
+
     <table class="ui three column table">
       <thead>
         <tr><th>Item</th>
@@ -42,6 +42,13 @@
         <% end %>
       </tbody>
     </table>
+
+    <%= form_for Order.new do |f| %>
+      <%= f.text_field :name, placeholder: "Name..." %>
+      <%= f.text_field :phone, placeholder: "Phone..." %>
+      <%= f.text_area :address, placeholder: "Address..." %>
+      <%= f.submit "Confirm Your Order" %>
+    <% end %>
 
   </div>
 </div>
